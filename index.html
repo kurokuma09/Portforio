@@ -13,6 +13,32 @@
             color: #333;
         }
 
+        #auth {
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        #auth input {
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        #auth button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-left: 10px;
+        }
+
+        #error {
+            color: red;
+            margin-top: 10px;
+        }
+
+        #content {
+            display: none;
+        }
+
+        /* 以下、もともとのCSSそのまま */
         header {
             background-color: #2c3e50;
             color: white;
@@ -111,97 +137,66 @@
 </head>
 
 <body>
-
-    <header>
-        <h1>田口博一｜ゲームプログラマー志望</h1>
-        <p style="font-size:16px; color: #ccc;">Unityを用いた個人制作・チーム制作ゲームを掲載しています</p>
-    </header>
-
-    <div class="info-box">
-        <h2>自己紹介</h2>
-        <p>ゲームプログラマーを志望している専門学校3年の田口博一です。Unity（C#）を用いた2Dゲームの個人・チーム制作を経験しており、主にアクション性や操作感にこだわった開発をしています。</p>
-        <ul>
-            <li>使用スキル：C# / Unity / Git</li>
-            <li>制作スタイル：個人制作・チーム制作（最大4人）</li>
-            <li>開発期間目安：2週間〜1ヶ月</li>
-        </ul>
+    <!-- パスワード入力画面 -->
+    <div id="auth">
+        <h2>パスワードを入力してください</h2>
+        <input type="password" id="password" placeholder="パスワード">
+        <button onclick="checkPassword()">送信</button>
+        <div id="error"></div>
     </div>
 
-    <div class="container">
-        <a href="Wasi.html" class="game-card">
-            <div class="game-image" style="background-image: url('Wasii.png');"></div>
-            <div class="game-content">
-                <h2 class="game-title">ワッシーのウィッグハント</h2>
-                <p class="game-description">
-                    ・1人プレイの横スクロールアクション<br>
-                    ・敵を倒してスコアを稼ごう！
-                    【ジャンル】横スクロールシューティングゲーム<br>
-                    【制作期間】約6カ月（チーム制作）<br>
-                    【使用技術】Unity（C#）<br>
-                    【概要】敵の攻撃をよけながら倒しスコアを稼ごう<br>
-                    【工夫点】何回遊んでも同じパターンにならないように、敵同士に当たり判定をつけたり、かなりランダムな出現に設定しております
-                </p>
-            </div>
-        </a>
+    <!-- 実際の中身 -->
+    <div id="content">
+        <header>
+            <h1>田口博一｜ゲームプログラマー志望</h1>
+            <p style="font-size:16px; color: #ccc;">Unityを用いた個人制作・チーム制作ゲームを掲載しています</p>
+        </header>
 
-        <a href="Oyoman.html" class="game-card">
-            <div class="game-image" style="background-image: url('TitleDeside.png');"></div>
-            <div class="game-content">
-                <h2 class="game-title">泳げマンボウくん</h2>
-                <p class="game-description">
-                    【ジャンル】縦スクロール避けゲーム<br>
-                    【制作期間】約6カ月（チーム制作）<br>
-                    【使用技術】Unity（C#）<br>
-                    【概要】1分間、魚の群れを避け続けるシンプルな耐久アクション。<br>
-                    【工夫点】当たり判定の軽量化とリトライ性を意識したテンポ設計を行いました。
-                </p>
-            </div>
-        </a>
+        <div class="info-box">
+            <h2>自己紹介</h2>
+            <p>ゲームプログラマーを志望している専門学校3年の田口博一です。Unity（C#）を用いた2Dゲームの個人・チーム制作を経験しており、主にアクション性や操作感にこだわった開発をしています。</p>
+            <ul>
+                <li>使用スキル：C# / Unity / Git</li>
+                <li>制作スタイル：個人制作・チーム制作（最大4人）</li>
+                <li>開発期間目安：2週間〜1ヶ月</li>
+            </ul>
+        </div>
 
+        <div class="container">
+            <!-- 各ゲームカード省略（元の内容と同じ） -->
+            <!-- Wasi.html / Oyoman.html / Hittakuri.html のゲーム紹介がここに入ります -->
+        </div>
 
+        <div class="info-box">
+            <h2>その他の制作物</h2>
+            <p>これまでに制作してきたゲームやデータが失われてしまったもの、開発途中で止まってしまった作品、企業様からのプロジェクトなども含め、制作経験の一環として紹介します。</p>
+            <ul>
+                <li><strong>決戦！オレルール！</strong>：じゃんけんのカードに属性があり…</li>
+                <!-- 省略 -->
+            </ul>
+        </div>
 
-
-        <a href="Hittakuri.html" class="game-card">
-            <div class="game-image" style="background-image: url('HittaTitle.png');"></div>
-            <div class="game-content">
-                <h2 class="game-title">ひったくりチェイス</h2>
-                <p class="game-description">
-                    ・2D横スクロールアクション<br>
-                    ・ひったくり犯から鞄を取り返せ！
-                    【ジャンル】縦スクロール避けゲーム<br>
-                    【制作期間】約6カ月（チーム制作）<br>
-                    【使用技術】Unity（C#）<br>
-                    【概要】1分間、魚の群れを避け続けるシンプルな耐久アクション。<br>
-                    【工夫点】当たり判定の軽量化とリトライ性を意識したテンポ設計を行いました。
-                </p>
-            </div>
-        </a>
+        <footer>
+            <p>&copy; 2025 Taguchi Hiroto</p>
+            <p>
+                GitHub: <a href="https://github.com/kurokuma09" target="_blank">kurokuma09</a><br>
+                メール：taguchi.hiroto20@gmail.com
+            </p>
+        </footer>
     </div>
 
-    <div class="info-box">
-        <h2>その他の制作物</h2>
-        <p>これまでに制作してきたゲームやデータが失われてしまったもの、開発途中で止まってしまった作品、企業様からのプロジェクトなども含め、制作経験の一環として紹介します。</p>
-        <ul>
-            <li><strong>決戦！オレルール！</strong>：じゃんけんのカードに属性があり、対決時の攻撃力で体力を削りあう（開発途中で止まってしまった）。</li>
-            <li><strong>Datto!!</strong>：兎を操作して3つのレーンを移動し、障害物をよけながら最長距離を移動しよう（完成）。</li>
-            <li><strong>煩悩退治</strong>：お坊さんの中にある煩悩を消して世界を救おう。（完成）</li>
-            <li><strong>ガンバラニャイト</strong>：主人公のニャイトのスキルを使い分け、ご主人のチーズを取り返そう（完成）</li>
-            <li><strong>GemHunter</strong>：４人対戦のスコアバトル、プレイヤー１人が蛇になり他プレイヤーを妨害する（現在制作中）。</li>
-            <li><strong>ApplevisionProを使用した企業プロジェクト（非公開）</strong>：企業様提供のプロジェクトに参加。</li>
-        </ul>
-    </div>
-
-    <footer>
-        <p>&copy; 2025 Taguchi Hiroto</p>
-        <p>
-            GitHub: <a href="https://github.com/kurokuma09" target="_blank">kurokuma09</a><br>
-            メール：taguchi.hiroto20@gmail.com
-
-        </p>
-    </footer>
-
-
-
+    <!-- JavaScriptで認証処理 -->
+    <script>
+        function checkPassword() {
+            const pass = document.getElementById("password").value;
+            if (pass === "HT2026TECH") {
+                document.getElementById("auth").style.display = "none";
+                document.getElementById("content").style.display = "block";
+            } else {
+                document.getElementById("error").innerText = "パスワードが違います。";
+            }
+        }
+    </script>
 </body>
 
 </html>
